@@ -1,0 +1,9 @@
+<form action="" method="POST">
+	{% csrf_token %}
+
+	{{formc.as_p}}
+	<input type="submit" name="Submit">
+</form>
+
+
+<p>Want to order as a regular customer?<a href="{% url 'create_order' %}">Click Here!</a></p>

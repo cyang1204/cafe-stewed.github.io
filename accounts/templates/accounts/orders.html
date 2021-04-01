@@ -1,0 +1,91 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<br>
+
+<div class="row">
+	
+	<div class="container">
+		<h3 id="evanka" class="lead main text-center">ORDERS</h3>
+
+		<hr>
+		<div class="card card-body">
+			,<!--<a class="btn btn-primary  btn-sm btn-block" href="">Create Order</a>-->
+			<table class="table table-sm">
+				<tr>
+					<th>User</th>
+					<th>Product</th>
+					<th>Table No</th>
+					<th>Quantity</th>
+					<th>Price</th>
+
+				</tr>
+
+
+
+				{% for a in orders %}
+					<tr>
+						<td>{{a.user.name}}</td>
+						<td>{{a.menu.dishname}}</td>
+						<td>{{a.Table_No}}</td>
+						<td>{{a.quantity}}</td>
+						<td>{{ a.price }}</td>
+
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' a.id %}">Delete</a></td>
+					</tr>
+				{% endfor %}
+		
+
+
+			</table>
+		</div>
+	</div>
+
+<div class="container">
+	<br>
+<br>
+
+		<h3 id="evanka" class="lead main text-center">CLUB ORDERS</h3>
+
+		<hr>
+		<div class="card card-body">
+			,<!--<a class="btn btn-primary  btn-sm btn-block" href="">Create Order</a>-->
+			<table class="table table-sm">
+				<tr>
+					<th>User</th>
+					<th>Product</th>
+					<th>Table No</th>
+					<th>Quantity</th>
+					<th>Price - 20%(discounted shown on physical bill)</th>
+
+				</tr>
+
+
+
+				{% for b in ordersc %}
+					<tr>
+						<td>{{b.Club_Member.name}}</td>
+						<td>{{b.menu.dishname}}</td>
+						<td>{{b.Table_No}}</td>
+						<td>{{b.quantity}}</td>
+						<td>{{ b.price }}</td>
+
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_club' b.id %}">Delete</a></td>
+					</tr>
+				{% endfor %}
+		
+
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<br>
+<br>
+
+{% endblock %}

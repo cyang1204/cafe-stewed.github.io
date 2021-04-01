@@ -1,0 +1,46 @@
+{% extends 'accounts/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="special-offser" class="parallax pricing">
+        <div class="container inner">
+
+            <h1 class="section-title text-center">Special Offers</h1>
+            <p id="evanka" class="lead main text-center">There is no sincere love than the love of food!</p>
+
+
+            
+            {% for i in menus %}
+            <div class="row">
+                <span class="col-lg-12 col-md-6 col-sm-6">
+                    
+                    <div class="pricing-item">
+                        
+                        <a href="#"><img class="img-responsive img-thumbnail" src="{{ i.image.url }}" alt=""></a>
+                        
+                        <div class="pricing-item-details">
+                            
+                            <h3><a href="#">{{ i.dishname }}</a></h3>
+                            
+                            <p>{{ i.description }}</p>
+                            
+                            <button><a class="btn btn-sm btn-danger" href="{% url 'create_order' %}">Order Now</a></button>
+                            <div class="clearfix"></div>
+                        </div>
+                        <span class="hot-tag br-red">Rs {{ i.price }}</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </span>
+            </div>
+            
+            {% endfor %}
+        
+
+            
+    </div>
+
+
+
+{% endblock %}

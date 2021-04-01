@@ -1,0 +1,25 @@
+
+
+<form action="" method="POST">
+	{% csrf_token %}
+
+	{{form.as_p}}
+	<input type="submit" name="Submit">
+</form>
+
+
+<p>Want to order as a club member?<a href="{% url 'create_club_order' %}">Click Here!</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!-- end loader --> 
+      <!-- header -->
+      {% load static %}
+      <style>
+         .hello-msg{
+            font-size: 16px;
+            color: #fff;
+            margin-right: 20px;
+         }
+      </style>
+      <header>
+         <!-- header inner -->
+         <div class="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo"> <a href="main.html"><img src="{% static 'images/logo.jfif' %}"></a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <div class="menu-area">
+                     <div class="limit-box">
+                        <nav class="main-menu">
+                           <ul class="menu-area-main">
+                              <li class="active"> <a href="{% url 'home' %}">Home</a> </li>
+                              <li> <a href="{% url 'menu' %}">Menu</a> </li>
+                              <li> <a href="{% url 'orders' %}">Orders/Admin</a> </li>
+                              <li> <a href="{% url 'register' %}">Enter Details</a></li>
+                              <li> <a href="{% url 'contact' %}">Contact</a> </li>
+
+
+                              
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner --> 
+      </header>
+      <!-- end header -->

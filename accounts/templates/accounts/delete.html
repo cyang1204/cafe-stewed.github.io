@@ -1,0 +1,23 @@
+{% extends 'accounts/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+
+<p id="evanka" class="lead main text-center">Are you sure you want to delete "{{item}}"?</p>
+
+
+<form action="{% url 'delete_order' item.id %}" method="POST">
+	{% csrf_token %}
+	<a id="evankso" href="{% url 'menu' %}">Cancel</a>
+	<input id="evankso" type="submit" name="Confirm">
+</form>
+<br>
+<br>
+<br>
+
+{% endblock %}
